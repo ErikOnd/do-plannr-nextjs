@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import AuthProvider from "./context/AuthProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,9 +18,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="svg-background">
-          <div
-            className="
+        <AuthProvider>
+          <div className="svg-background">
+            <div
+              className="
     flex
     items-center
     justify-center
@@ -27,10 +29,11 @@ export default function RootLayout({
     h-screen
     
   "
-          >
-            {children}
+            >
+              {children}
+            </div>
           </div>
-        </div>
+        </AuthProvider>
       </body>
     </html>
   );
