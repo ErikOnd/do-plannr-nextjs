@@ -8,7 +8,8 @@ export const options: NextAuthOptions = {
       clientId: process.env.GITHUB_ID as string,
       clientSecret: process.env.GITHUB_SECRET as string,
     }),
-    CredentialsProvider({
+
+    /*  CredentialsProvider({
       name: "Credentials",
       credentials: {
         username: {
@@ -17,12 +18,13 @@ export const options: NextAuthOptions = {
           placeholder: "username",
         },
         password: {
-          label: "Password::",
+          label: "Password:",
           type: "password",
           placeholder: "",
         },
       },
       async authorize(credentials) {
+        //connect db here
         const user = { id: "42", name: "Dave", password: "nextauth" };
         if (
           credentials?.username === user.name &&
@@ -33,6 +35,6 @@ export const options: NextAuthOptions = {
           return null;
         }
       },
-    }),
+    }), */
   ],
 };
